@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} ^black-web
+    RewriteRule (.*) http://www.xn---38-5cdtg9ahy4b.xn--p1ai/$1 [R=301,L]
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+    RewriteRule ^index\.php$ http://www.xn---38-5cdtg9ahy4b.xn--p1ai/ [R=301,L]
+</IfModule>
+
+AddDefaultCharset UTF-8
+
+
+# Bad Rquest
+ErrorDocument 400 /400.html
+# Authorization Required
+ErrorDocument 401 /401.html
+# Forbidden
+ErrorDocument 403 /403.html
+# Not found
+ErrorDocument 404 /err404.html
+# Method Not Allowed
+ErrorDocument 405 /405.html
+# Request Timed Out
+ErrorDocument 408 /408.html
+# Request URI Too Long
+ErrorDocument 414 /414.html
+# Internal Server Error
+ErrorDocument 500 /500.html
+# Not Implemented
+ErrorDocument 501 /501.html
+# Bad Gateway 
+ErrorDocument 502 /502.html
+# Service Unavailable 
+ErrorDocument 503 /503.html
+# Gateway Timeout
+ErrorDocument 504 /504.html
